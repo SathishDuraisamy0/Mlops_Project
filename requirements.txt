@@ -1,0 +1,12 @@
+pandas
+numpy
+google-cloud-storage
+scikit-learn
+pyyaml
+google-cloud-secret-manager
+seaborn
+matplotlib
+statsmodels
+imbalanced-learn
+lightgbm
+mlflow
