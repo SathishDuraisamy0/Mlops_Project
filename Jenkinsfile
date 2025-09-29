@@ -1,29 +1,39 @@
-pipeline{
+pipeline {
     agent any
- 
+
     environment {
-        VENV_DIR =''
+        VENV_DIR = 'venv'
     }
 
-    stages{
-        stage("Cloning Github repo to Jenkins"){
-            steps{
-                script{
-                    echo"cloning Github repo to Jenkins.........."
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/SathishDuraisamy0/Mlops_Project.git']])
+    stages {
+        stage("Cloning Github repo to Jenkins") {
+            steps {
+                script {
+                    echo "Cloning Github repo to Jenkins.........."
+                    checkout scmGit(
+                        branches: [[name: '*/main']],
+                        extensions: [],
+                        userRemoteConfigs: [[
+                            credentialsId: 'github-token',
+                            url: 'https://github.com/SathishDuraisamy0/Mlops_Project.git'
+                        ]]
+                    )
                 }
             }
         }
-        stage("Cloning vs"){
-            steps{
-                script{
-                    echo"cloning up vs.........."
-                    sh '''
-                    python -m venv $(VIEW_DIR)
-                    .&{VEW_DIR}/bin/activate
+
+        stage("Setup Virtual Environment") {
+            steps {
+                script {
+                    echo "Setting up virtual environment.........."
+                    sh """
+                    python -m venv ${VENV_DIR}
+                    . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
-                    pip install -e.                
-                    '''
+                    pip install -e .
+                    """
                 }
+            }
+        }
     }
 }
