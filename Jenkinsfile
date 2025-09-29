@@ -1,5 +1,9 @@
 pipeline{
-    agent any 
+    agent any
+ 
+    environment {
+        VENV_DIR =''
+    }
 
     stages{
         stage("Cloning Github repo to Jenkins"){
@@ -10,5 +14,16 @@ pipeline{
                 }
             }
         }
+        stage("Cloning vs"){
+            steps{
+                script{
+                    echo"cloning up vs.........."
+                    sh '''
+                    python -m venv $(VIEW_DIR)
+                    .&{VEW_DIR}/bin/activate
+                    pip install --upgrade pip
+                    pip install -e.                
+                    '''
+                }
     }
 }
