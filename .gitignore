@@ -2,4 +2,4 @@ venv/
 mlruns/
 WORLDLINE.egg-info/
 logs/
-open-systems-chatbot-58bbea4cdd56.json/
+open-systems-chatbot-*.json

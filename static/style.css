@@ -1,0 +1,98 @@
+/* Global Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Focus effect on inputs */
+input:focus, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Result Styling */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result p {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+    background: #28a745;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Animate container appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
